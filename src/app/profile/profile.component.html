@@ -1,0 +1,84 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">GithubSearch</a>
+    </div>
+    </div><!--/.nav-collapse -->
+</nav>
+
+
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+          <div class="form-group">
+            <input type="text" name="name" class="form-control" placeholder="Please Enter Github Username..."
+
+              [(ngModel)]="username" (keyup)="onSearch()">
+          </div>
+
+
+          <div *ngIf="user">
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{user.name || user.login}}</h3>
+            </div>
+            <div class="panel-body">
+
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="{{user.avatar_url}}" alt="" class="img-thumbnail">
+                </div>
+                <div class="col-md-8">
+                  <span class="label label-info">{{user.public_repos}} Public Repos</span>
+                  <span class="label label-success">{{user.public_gists}} Public Gist</span>
+                  <span class="label label-default">{{user.followers}} Followers</span>
+                  <span class="label label-danger">{{user.following}} Following</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Repos</h3>
+            </div>
+            <div class="panel-body">
+
+              <div  *ngFor="let repos of reposUser">
+                <div class="row">
+                  <div class="col-md-9">
+                    <h4><a href="{{repos.html_url}}" target="_blank">{{repos.name}}</a></h4>
+                    <p>{{repos.description}}</p>
+                  </div>
+                  <div class="col-md-3">
+                    <span class="label label-info">{{repos.watchers}} Watches</span>
+                    <span class="label label-success">{{repos.forks}}Forks</span>
+                  </div>
+                </div>
+                <hr>
+              </div>
+
+
+            </div>
+          </div>
+
+</div>
+
+        </div>
+      </div>
+
+
+
+

@@ -1,6 +1,6 @@
 # testgithubsearch
 
-`http://developer.telerik.com/featured/quick-angular-2-hosting-angular-cli-github-pages/`
+http://developer.telerik.com/featured/quick-angular-2-hosting-angular-cli-github-pages/
 
 - Git remote command.
 
